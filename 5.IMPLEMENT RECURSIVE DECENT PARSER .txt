@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<stdlib.h>
+char i;
+
+void match(char c)
+{
+     if(i==c)
+        i=getchar();
+     else
+     {
+        printf("Invalid Input\n");
+	exit(0);
+     }
+}
+
+void B()
+{
+  if(i=='b')
+  {
+     match('b');
+  }
+  else
+  {
+     printf("Invalid Input\n");
+     exit(0);
+  }
+}
+void A()
+{
+  if(i=='a')
+  {
+     match('a');
+     B();
+  }
+  else
+  return;
+}
+
+void S()
+{
+ A();
+ A();
+}
+
+void main()
+{
+   char input[10];
+   printf("Enter String with $ at the end\n");
+   i=getchar();
+   S();
+   if(i=='$')
+   {
+       printf("\nParsing Successful\n");
+   }
+   else 
+   {
+       printf("Invalid Input\n");
+   }
+}
+
+
+/* abab$*/
